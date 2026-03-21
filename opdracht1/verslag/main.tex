@@ -10,6 +10,7 @@ headings=standardclasses
 \usepackage{amssymb}
 \usepackage{amsthm}
 \usepackage{algorithm}
+\usepackage{float}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %                                                       %
@@ -69,10 +70,41 @@ Zij a $\in$ $ ] 0, 1 [ $ een reële parameter, gedefinieerd zoals in de opgave.
 Dan zoeken we een functie F, met een vast punt $x^*$
 zodat de convergentiefactor in $x^*$ gelijk is aan a.
 
+Beschouw hiertoe de futie $f: \RR \rightarrow \RR: x \mapsto ax$.
+Mogelijke vaste punten zijn $a = 1$, hetgeen onmogelijk is wegens de definitie van a,
+of $x^* = 0$.
+
+We berekenen de convergentiefactor in het punt $x^* = 0$.
+Definieer daartoe de rij $\left(x_k\right)_k$ als $\left(x_{k+1}\right) = a*x_k$.
+
+Dan is de convergentiefactor 
+\begin{math}
+    \rho
+    = 
+    \frac{\left\lvert \epsilon ^ {\left( k\right)} \right\rvert}{
+        \left\lvert \epsilon ^ {\left( k-1 \right)} \right\rvert 
+    } 
+    =
+    \frac{\left\lvert x^* - x_k\right\rvert }{\left\lvert x^* - x_{k-1}\right\rvert }
+    =
+    \frac{\left\lvert x_k\right\rvert }{\left\lvert x_{k-1}\right\rvert }
+    =
+    \frac{\left\lvert a * x_{k-1}\right\rvert }{\left\lvert x_{k-1}\right\rvert }
+    =
+    \left\lvert a \right\rvert 
+    = a,
+\end{math}
+
+zodat inderdaad de convergentatiefactor van het vast punt a is.
+
+\begin{samepage}
+\input{table}
+\end{samepage}
 
 
 \paragraph*{Opdracht 2} % Maximaal 1.5 pagina (dit is inclusief figuren)
 
-\include{table}
+
+
 	
 \end{document}
