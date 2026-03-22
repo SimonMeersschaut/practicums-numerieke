@@ -3,6 +3,7 @@ headings=standardclasses
 ]{scrartcl}
 \usepackage[a4paper,margin=2.0cm]{geometry}
 \usepackage[table,xcdraw]{xcolor}
+\usepackage{graphicx}
 
 
 % Gebruik van wiskundige symbolen
@@ -70,12 +71,12 @@ Zij a $\in$ $ ] 0, 1 [ $ een reële parameter, gedefinieerd zoals in de opgave.
 Dan zoeken we een functie F, met een vast punt $x^*$
 zodat de convergentiefactor in $x^*$ gelijk is aan a.
 
-Beschouw hiertoe de futie $f: \RR \rightarrow \RR: x \mapsto ax$.
+Beschouw hiertoe de functie $f: \RR \rightarrow \RR: x \mapsto ax$.
 Mogelijke vaste punten zijn $a = 1$, hetgeen onmogelijk is wegens de definitie van a,
 of $x^* = 0$.
 
 We berekenen de convergentiefactor in het punt $x^* = 0$.
-Definieer daartoe de rij $\left(x_k\right)_k$ als $\left(x_{k+1}\right) = a*x_k$.
+Definieer daartoe de rij $\left(x_k\right)_k$ als $\left(x_{k+1}\right) = a \cdot x_k$.
 
 Dan is de convergentiefactor 
 \begin{math}
@@ -95,17 +96,22 @@ Dan is de convergentiefactor
     = a,
 \end{math}
 
-zodat inderdaad de convergentatiefactor van het vast punt a is.
+zodat inderdaad de convergentatiefactor van het vast punt a is. \\ \\
+We beginnen de vastpuntiteratie in $x_0=1$. Zoals ook in onderstaande figuur weergegeven.
+De fout $\epsilon$ komt overeen met de x-waarde na een opvolgende iteratiestap.
+%% TODO: Is dit beter?? Ik weet het ook niet hahahah
 
-
-%% TODO: KAAAAS, ik vind dit niet zo goed verwoord, kun jij dit veranderen?
-We voeren vastpuntsiteratie toe in het beginpunt $x_0=1$.
-Dan is de error $\epsilon$ bovendien ook de waarde van de iteratie.
-
-\begin{samepage}
-\input{table}
-\end{samepage}
-
+\begin{figure}[h!]
+\begin{minipage}{0.45\textwidth}
+    \centering
+    \input{table}
+\end{minipage}
+\begin{minipage}{0.45\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{iteratie}
+    \caption{iteratiestappen}
+\end{minipage}
+\end{figure}
 
 \paragraph*{Opdracht 2} % Maximaal 1.5 pagina (dit is inclusief figuren)
 	
