@@ -7,7 +7,7 @@ X_STAR = 0
 def func(a:float, x:float) -> float:
     return a*x
 
-def create_table(a=0.5, x0=1):
+def create_table(a=1/3, x0=1):
     table = np.zeros((ROWS, COLUMNS))
     
     x = x0
