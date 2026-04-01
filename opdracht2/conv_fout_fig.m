@@ -1,12 +1,9 @@
-function conv_fout_fig(f, maxiter)
+function conv_fout_fig(f, derf, tol, maxiter, x0)
     itsol = newtR(f, derf, tol, maxiter, x0);
 
 
-    fig(1);
+    figure(1);
     plot(itsol);
     legend();
 end
 
-
-
-conv_fout_fig(f, 10);

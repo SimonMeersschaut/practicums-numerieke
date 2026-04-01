@@ -11,7 +11,8 @@ function itsol = newtR(f, derf, tol, maxiter, x0)
 xk = x0;
 itsol = [x0, 0];
 for i=1:maxiter
-    xk = xk - (f(xk)/derf(xk));
+    xk = xk - (f(xk)./derf(xk));
+    disp(xk)
     itsol(i+1) = xk;
     if abs(itsol(i+1) - itsol(i)) < tol
         break;
