@@ -11,6 +11,7 @@ headings=standardclasses
 \usepackage{amssymb}
 \usepackage{amsthm}
 \usepackage{algorithm}
+\usepackage{amsmath}
 \usepackage{float}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -109,10 +110,74 @@ De fout $\epsilon$ komt overeen met de x-waarde na een opvolgende iteratiestap.
 \begin{minipage}{0.45\textwidth}
     \centering
     \includegraphics[width=\linewidth]{iteratie}
-    \caption{iteratiestappen}
+    \caption{Visualisatie van de vastpuntsiteratie.}
 \end{minipage}
 \end{figure}
 
 \paragraph*{Opdracht 2} % Maximaal 1.5 pagina (dit is inclusief figuren)
-	
+
+Als stopcriterium kozen wij $(abs(itsol(i+1) - itsol(i)) < tol)\space \&\& (abs(f(xk)) < tol)$.
+Het eerste deel hiervan is rechtstreeks overgenomen van de Newton-Raphsonmethode.
+Echter, wanneer we dit uitvoerde, merkten we dat het programma ook stopte bij het lokaal minimum
+van $f_2(x)$ in $x=0$ waar de methode niet beter kan doen dan oscileren tussen positieve en negatieve getallen dicht bij nul,
+terwijl $x=0$ geen nulpunt is van $f_2$ (zie Figure 3).
+
+Dit kan je ook zien op Figure 4, waarbij de fout van de methode ten opzichte van het werkelijk vast punt niet verbetert
+doorheen de iteraties. Wanneer we als startwaarde $x=4$ meegaven, dan convergeerde de functie wel naar een nulpunt.
+Immers, in figure 4 kan men zien dat de afgeleide van de functie in 4 inderdaad een zeer goede aanwijzing zal geven voor
+het nulpunt tussen $x=4$ en $x=6$.
+
+We voerde de methode ook uit op de andere functies. We merkten op dat de andere functies
+wel convergeerden naar een nulpunt. Voor deze functies is de orde 2 (per keuze van de vastpuntsmethode Newton-Rhapson).
+De bijhorende convergentiefactoren staan genoteerd in Figure 5.
+De convergentie factor is $\sup_{k \in \NN} \{ \frac{\varepsilon_{k+1}}{\varepsilon_{k}}  \} $, hetgeen voor een eindig aantal
+iteratiestappen gelijk is aan $\max_{k \in \{ 1, ..., N\} } \{ \frac{\varepsilon_{k+1}}{\varepsilon_{k}}  \} $.
+% TODO: "Leg uit hoe je resultaten in overeenstemming zijn met de theorie."
+
+Merk op (in Figure 3) dat $f_4(x)$ een meervoudig nulpunt heeft, noem dit $x_0$.
+De graad van het nulpunt blijkt drie te zijn (zie functievoorschrift van $f_4$).
+Dit heeft tot gevolg dat $\lim_{x \to x_0}  f_4^{'} (x) = 0$. Aangezien ook $\lim_{x \to x_0} f_4(x) $ = 0, 
+deelt de iteratiemethode een zeer klein getal door een ander zeer klein getal, hetgeen een onnauwkeurig resultaat
+geeft. Om dit op te lossen berekenen we $x_{k+1} = x_k - \frac{f_4(x_k)}{f_4^{'}(x_k)}$ expliciet:
+
+% TODO
+
+
+% 3. Bereken nu 60 iteraties van de Newton-Raphsonmethode, toegepast op f4. 
+% Je zal merken dat
+% je hierbij newtR niet kan gebruiken, en dit expliciet zal moeten coderen. Wat merk je op in
+% verband met de fout? Is de uiteindelijk fout op het resultaat zo klein als je zou hopen? Stel nu
+% met de hand de iteratieformule op voor dit geval. Vereenvoudig zo ver mogelijk, en zet ook op
+% gelijke noemer. Reken nu, met de bekomen uitdrukking, ad hoc 60 iteraties van de geïnduceerde
+% vastepuntsiteratie uit. Plot de resulterende fout op dezelfde figuur. Wat merk je op? Leg uit.
+% Maak de link met relevante concepten uit de cursus
+
+\begin{figure}[h!]
+\begin{minipage}{0.45\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{geogebra.png}
+    \caption{Grafiek van de functies $f(x)=f_1(x)$, $g(x)=f_2(x)$, $k(x)=f_3(x)$, $l(x)=f_4(x)$}
+\end{minipage}
+\begin{minipage}{0.45\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{figure_fout_plot.png}
+    \caption{Grafiek van de fout van de methode ten opzichte van het werkelijk vast punt doorheen de iteraties.}
+\end{minipage}
+\end{figure}
+
+\begin{figure}[h!]
+\begin{minipage}{0.45\textwidth}
+    \centering
+    \input{table_convergentie_factoren}
+\end{minipage}
+\begin{minipage}{0.45\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{fout_op_f4_expliciet.png}
+    \caption{Convergentiegedrag van $f_4$ na het opstellen van een expliciete formule.}
+\end{minipage}
+\end{figure}
+
+
+
+
 \end{document}

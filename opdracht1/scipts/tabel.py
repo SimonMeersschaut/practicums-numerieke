@@ -21,7 +21,7 @@ def create_table(a=1/3, x0=1):
 
         x = func(a, x)
     
-    return table
+    return np.matrix(table)
 
 
 def to_latex(table):
@@ -43,6 +43,12 @@ def to_latex(table):
 
 def main():
     table = create_table()
+    # create plot
+    import matplotlib.pyplot as plt
+    plt.plot(table[:, 0])
+    plt.show()
+
+    # write table in latex
     with open("../verslag/table.tex", 'w') as f:
         f.write(to_latex(table))
 
