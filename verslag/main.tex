@@ -98,7 +98,7 @@ Dan is de convergentiefactor
 \end{math}
 
 zodat inderdaad de convergentatiefactor van het vast punt a is. \\ \\
-We beginnen de vastpuntiteratie in $x_0=1$. Zoals ook in onderstaande figuur weergegeven.
+We beginnen de vastpuntiteratie met $a=1/3$ in $x_0=1$. Zoals ook in onderstaande figuur weergegeven.
 De fout $\epsilon$ komt overeen met de x-waarde na een opvolgende iteratiestap.
 %% TODO: Is dit beter?? Ik weet het ook niet hahahah
 
@@ -116,12 +116,11 @@ De fout $\epsilon$ komt overeen met de x-waarde na een opvolgende iteratiestap.
 
 \paragraph*{Opdracht 2} % Maximaal 1.5 pagina (dit is inclusief figuren)
 
-Als stopcriterium kozen wij $|x_k - x_{k-1}| < tol\space \&\& |f(x_k)| < tol$.
+Als stopcriterium kozen wij $(|x_k - x_{k-1}| < tol)\: \&\& \:(|f(x_k)| < tol)$.
 Het eerste deel hiervan is rechtstreeks overgenomen van de Newton-Raphsonmethode.
 Echter, wanneer we dit uitvoerde, merkten we dat het programma ook stopte bij het lokaal minimum
 van $f_2(x)$ in $x=0$ waar de methode niet beter kan doen dan oscileren tussen positieve en negatieve getallen dicht bij nul,
 terwijl $x=0$ geen nulpunt is van $f_2$ (zie Figure 3).
-\\ \\
 Dit kan je ook zien op Figure 4, waarbij de fout van de methode ten opzichte van het werkelijk vast punt niet verbetert
 doorheen de iteraties. Wanneer we als startwaarde $x=4$ meegaven, dan convergeerde de functie wel naar een nulpunt.
 Immers, in figure 4 kan men zien dat de afgeleide van de functie in 4 inderdaad een zeer goede aanwijzing zal geven voor
@@ -140,7 +139,6 @@ Dit heeft tot gevolg dat $\lim_{x \to x_0}  f_4^{'} (x) = 0$. Aangezien ook $\li
 deelt de iteratiemethode een zeer klein getal door een ander zeer klein getal, hetgeen een onnauwkeurig resultaat
 geeft. Om dit op te lossen berekenen we $x_{k+1} = x_k - \frac{f_4(x_k)}{f_4^{'}(x_k)}$ expliciet.
 
-% TODO
 dit is zeer simpel te doen door middel van de productformule en de simpele afgeleide van $e^x$.
 dan volgt:
 
@@ -158,15 +156,6 @@ vul hiermee $x_{k+1} = x_k - \frac{f_4(x_k)}{f_4^{'}(x_k)}$. Dit geeft:
 \end{align*}
 
 Met deze expliciete iteratieformule verkrijgen we wel degelijk convergentie, met een fout zoals aangegeven op Figure 6.
-
-% 3. Bereken nu 60 iteraties van de Newton-Raphsonmethode, toegepast op f4. 
-% Je zal merken dat
-% je hierbij newtR niet kan gebruiken, en dit expliciet zal moeten coderen. Wat merk je op in
-% verband met de fout? Is de uiteindelijk fout op het resultaat zo klein als je zou hopen? Stel nu
-% met de hand de iteratieformule op voor dit geval. Vereenvoudig zo ver mogelijk, en zet ook op
-% gelijke noemer. Reken nu, met de bekomen uitdrukking, ad hoc 60 iteraties van de geïnduceerde
-% vastepuntsiteratie uit. Plot de resulterende fout op dezelfde figuur. Wat merk je op? Leg uit.
-% Maak de link met relevante concepten uit de cursus
 
 \begin{figure}[h!]
 \begin{minipage}{0.45\textwidth}
