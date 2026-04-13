@@ -1,0 +1,1 @@
+function fderx0 = findif(f, h, x0)
