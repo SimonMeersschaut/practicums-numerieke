@@ -182,8 +182,77 @@ Met deze expliciete iteratieformule verkrijgen we wel degelijk convergentie, met
 \end{minipage}
 \end{figure}
 
+\newpage
+
 \paragraph*{Opdracht 3} % 3/4 van een pagina
+
+Voor de derde opdracht beschouwen we een complexe functie $f: \mathbb{C}  \rightarrow \mathbb{C} $,
+waarbij we Newton-Raphson toepassen met verschillende startposities. 
+Het script gaat alle punten in een rooster af waarbij hij telkens de convergentiemethode
+toepast met dit startpunt. Indien er convergentie optreedt, slaan we op naar welk nulpunt dat was (we slagen de index van het nulpunt op).
+Dit levert een matrix A op waarbij $A_{(x, y)}$ overeenkomt met de index van het nulpunt, startende vanuit positie $z= x + iy$.
+We kozen hierbij voor een rooster van -2 tot 2 voor beiden assen met telkens
+1.000 onderverdelingen per as voor een totaal van 1.000.000 startposities.
+De resultaten hiervan zijn weergegeven in Figure 7 en Figure 8.
+
+Men kan zien dat in de nabije omgeving rond een nulpunt, een uniforme kleur aanwezig is.
+Dat is logisch. Immers, als er convergentie optreedt, zullen alle punten 
+in de omgeving convergeren naar het nulpunt (per definitie van convergentie).
+Daarnaast zijn er ook prachtige patronen waarneembaar daar waar
+een punt ongeveer even dicht bij minstens twee nulpunten ligt.
+We vermoeden dat deze patronen zich voordoen doordat we discrete stappen
+zetten op een plek waar de Newton-Raphson methode zeer gevoelig is.
+De iteratiemethode zet dan een substantiele stap richting een nulpunt
+dat niet het dichtstbijzijnde nulpunt is. Eens deze stap gezet,
+convergeert hij (wel) naar het dichstbijzijnde nulpunt.
+De grafiek demonstreert dus in zekere zin de gevoeligheid van
+de vastpuntsmethode op instabiele punten.
+
+Het uitvoeren van dit programma duurt best lang indien men een goede resulotie wilt,
+t.t.z. een hoge dimensie van de matrix A.
+Dat komt omdat voor elke rij in de matrix, alle kolommen afgegaan worden waarbij
+telkens Newton-Raphson wordt uitgevoerd.
+Het aantal rijen en kolommen van deze matrix wordt bepaalt door Ny en Nx respectievelijk.
+De convergentiemethode zelf heeft een tijdscomplexiteit van $\mathcal{O} (max \_ iter)$.
+Bijgevolg worden er dus $\mathcal{O} (Ny \cdot Nx \cdot  max\_iter)$ primaire operaties uitgevoerd.
+Dit is ook meteen de duurste operatie. Men het algoritme erbij nemen en inzien dat alle andere operaties
+strikt goedkoper zijn. Zo ook bijvoorbeeld het zoeken van het dichtstbijzijnd nulpunt, hetgeen lineair
+in het aantal nulpunten van de functie berekent kan worden. Voor een vaste functie is het aantal
+punten uiteraard constant.
+
+
+\begin{figure}[h!]
+\begin{minipage}{0.45\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{fractals.png}
+    \caption{Grafiek van de matrix $A$ voor de functie $f: \mathbb{C} \rightarrow  \mathbb{C}, x \mapsto x ^ 3 - 1 $.}
+\end{minipage}
+\begin{minipage}{0.45\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{fractals5.png}
+    \caption{Grafiek van de matrix $A$ voor de functie $f: \mathbb{C} \rightarrow  \mathbb{C}, x \mapsto x ^ 5 - 1 $}
+\end{minipage}
+\end{figure}
+
+
+% \begin{figure}[h!]
+% \begin{minipage}{0.45\textwidth}
+%     \centering
+%     \includegraphics[width=\linewidth]{Graph_z3.png}
+%     \caption{Grafiek van de functie $f: \mathbb{C} \rightarrow  \mathbb{R}, x \mapsto \vert x ^ 3 - 1 \vert  $.}
+% \end{minipage}
+% \begin{minipage}{0.45\textwidth}
+%     \centering
+%     \includegraphics[width=\linewidth]{Newton-Raphson.png}
+%     \caption{Grafische voorstelling van de Newton-Raphson methode voor $f: \mathbb{C} \rightarrow  \mathbb{C}, x \mapsto x ^ 3 - 1 $.}
+% \end{minipage}
+% \end{figure}
+
+\newpage
+
 \paragraph*{opdracht 4} % halve pagina
+
+
 \paragraph*{Opdracht 5} % halve pagina 
 
 \end{document}

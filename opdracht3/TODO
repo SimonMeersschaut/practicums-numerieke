@@ -1,4 +1,16 @@
-[] Voorzie duidelijke commentaar in de functie zelf, analoog aan newtR, en 
+[x] Voorzie duidelijke commentaar in de functie zelf, analoog aan newtR, en 
 [] beschrijf in je verslag beknopt hoe het algoritme werkt.
-[] Bespreek ten slotte de complexiteit van het algoritme en
-[] identificeer welke onderdelen het meest tijdsintensief zijn.
+ 1) Ga alle punten in de grid af
+ 2) run Newton Rhapson met dat start punt
+ 3) zoek het dichtst bijzijnd punt en neem de index
+ 4) zet dat in de matrix en plot
+
+[v] Bespreek ten slotte de complexiteit van het algoritme en
+    - cubisch: Nx * Ny * max_iter:
+        - newton rhapson is lineair in het maximaal aantal iteraties
+        - wordt Nx * Ny keer uitgevoerd
+[v] identificeer welke onderdelen het meest tijdsintensief zijn.
+    - initializatie: constant
+    - NewtR: lineair
+        - wordt Nx Ny keer uitgevoerd, zodat de totale tijd hier gespendeerd ook het grootst is
+    - closest_point: lineair in aantal nulpunten (dus constant voor een vaste functie en limieten)
