@@ -1,25 +1,25 @@
 % f = @(x)(x .^ 3 - x .^ 2  + x - 1);
 % derf = @(x)(newton_differentie(f, x));
 
-macht = 5;
+f = @(z)(cos(z));
+derf = @(z)(-sin(z));
 
-f = @(z)(z .^ macht - 1);
-derf = @(z)(macht .* z .^ (macht-1));
-
-
+% Known zero points
+zeros = [
+    1;
+    -1/2 + 1/2*sqrt(3)*1i;
+    -1/2 - 1/2*sqrt(3)*1i;
+];
+zeros_text = [
+    "1";
+    "-1/2 + 1/2*sqrt(3)*1i";
+    "-1/2 - 1/2*sqrt(3)*1i";
+];
 
 lims = [-2, 2, -2, 2];
 
-% Known zero points
-zeros = exp(2*pi*1i*(0:(macht-1))/macht).';
-% zeros_text = [
-%     "-1i";
-%     "1i";
-% ];
-
-
-Nx = 1000;
-Ny = 1000;
+Nx = 100;
+Ny = 100;
 tol = 1e-3;
 maxiter = 1e2;
 
@@ -34,7 +34,7 @@ y_step = (lims(4) - lims(3)) / Ny;
 
 for ind=1:length(zeros)
     zero_point = zeros(ind);
-    % mytext = zeros_text(ind);
+    mytext = zeros_text(ind);
     px =  (real(zero_point) - lims(1)) / x_step;
     py =  (imag(zero_point) - lims(3)) / y_step;
 
@@ -43,6 +43,7 @@ for ind=1:length(zeros)
     'MarkerEdgeColor', 'black', ...     % Adds a border so it pops against colors
     'MarkerFaceColor', 'black', ...       % The main color
     'LineWidth', 1.5);                  % Thickness of the border
-    % text(px + 1, py + 0.3, mytext, 'FontSize', 12, "Color", "black");
+    text(px + 1, py + 0.3, mytext, 'FontSize', 12, "Color", "black");
 end
-
+    
+axis(lims)
