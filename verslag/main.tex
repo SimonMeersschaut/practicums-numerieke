@@ -255,4 +255,35 @@ punten uiteraard constant.
 
 \paragraph*{Opdracht 5} % halve pagina 
 
+Eerst berekenden we de error $\epsilon$
+tussen de eindige differentie 
+$\bar{f'(x)} = \frac{f(x_0 + h) - f(x_0 - h)}{2h} $
+en de exacte afgeleide.
+De hebben we geplot op logaritmische schaal in Figure 9. % TODO check
+Hierbij merkten we op dat het praktisch optimum iets groter blijkt
+te zijn dan het theoretisch minimum $10^{-8}$.
+
+Vervolgens hermaakten we het fractaal van opdracht 3,
+maar ditmaal met de nieuwe eindige differentie.
+Op kleine schaal zullen er kleine onnauwkeurigheden
+optreden die zorgen voor een (lichtjes) afwijkend
+fractaal.
+
+
+Men kan zien dat het resultaat voor het blote oog
+identiek is. 
+
+\begin{figure}[h!]
+\begin{minipage}{0.45\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{error_plot.png}
+    \caption{Grafiek van de error op de benadering van de afgeleide. In rood $10^{-8}$, het theoretisch optimum.}
+\end{minipage}
+\begin{minipage}{0.45\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{newtfrac_findiff.png}
+    \caption{Grafiek van de matrix A met eindige differentie voor $z^3 - 1$.}
+\end{minipage}
+\end{figure}
+
 \end{document}

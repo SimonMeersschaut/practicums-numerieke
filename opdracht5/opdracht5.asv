@@ -17,6 +17,6 @@ end
 % hold on
 loglog(h, eps);
 xline(1e-8);
-title("Error on derivative $$\epsilon = \vert fder(x_0) - f'(x_0) \vert $$",'interpreter','latex');
-xlabel("x_0")
+title("Error on derivative");
+xlabel("")
 % xscale("log");
