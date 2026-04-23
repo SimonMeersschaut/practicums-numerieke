@@ -259,8 +259,18 @@ Eerst berekenden we de error $\epsilon$
 tussen de eindige differentie 
 $\bar{f'(x)} = \frac{f(x_0 + h) - f(x_0 - h)}{2h} $
 en de exacte afgeleide.
-De hebben we geplot op logaritmische schaal in Figure 9. % TODO check
-Hierbij merkten we op dat het praktisch optimum iets groter blijkt
+Dat hebben we geplot op logaritmische schaal in Figure 9. % TODO check
+
+Men kan twee fenomenen zien op de grafiek. Enerzijds, wanneer we de
+afstand $h$ te groot maken, dan zijn we de grafiek te
+sterk aan het benaderen; we nemen punten die te ver van
+elkaar liggen.
+Anderzijds, wanneer we de afstand $h$ te klein maken,
+dan rekent matlab met zo'n kleine getallen dat afrondingsfouten
+te sterk doorwegen, zodat de accuraatheid net kleiner wordt.
+
+We constateren op basis van de figuur dat het praktisch optimum
+iets groter blijkt
 te zijn dan het theoretisch minimum $10^{-8}$.
 
 Vervolgens hermaakten we het fractaal van opdracht 3,
