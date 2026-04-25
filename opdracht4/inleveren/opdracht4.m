@@ -1,7 +1,5 @@
-for m = [2, 4, 10]
-
-% TODO: for lus over m=1:10
-% en de bijhorende breedte opslaan en plotten
+for m = [2, 4]
+    
 f = @(z) (z-1).^m .* (z+1);
 df = @(z) ((z+1).*m.*(z-1).^(m-1)) + (z-1).^m;
 
@@ -32,12 +30,6 @@ colorbar
 title(sprintf('Newton fractal for m = %d', m));
 xlabel('Re(z)');
 ylabel('Im(z)');
-end
-
-m = 4;
-
-f = @(z) (z-1).^m .* (z+1);
-df = @(z) ((z+1).*m.*(z-1).^(m-1)) + (z-1).^m;
 
 N = 800;
 x = linspace(-2,2,N);
@@ -70,3 +62,5 @@ cb.Label.String = 'Aantal Newton-iteraties';
 title(sprintf('Convergentiesnelheid (m = %d)',m));
 xlabel('Re(z)');
 ylabel('Im(z)');
+end
+

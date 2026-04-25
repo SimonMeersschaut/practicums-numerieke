@@ -97,7 +97,7 @@ Dan is de convergentiefactor
     = a,
 \end{math}
 
-zodat inderdaad de convergentatiefactor van het vast punt a is. \\ \\
+zodat inderdaad de convergentatiefactor van het vast punt a is.  
 We beginnen de vastpuntiteratie met $a=1/3$ in $x_0=1$. Zoals ook in onderstaande figuur weergegeven.
 De fout $\epsilon$ komt overeen met de x-waarde na een opvolgende iteratiestap.
 
@@ -117,21 +117,21 @@ De fout $\epsilon$ komt overeen met de x-waarde na een opvolgende iteratiestap.
 
 Als stopcriterium kozen wij $(|x_k - x_{k-1}| < tol)\: \&\& \:(|f(x_k)| < tol)$.
 Het eerste deel hiervan is rechtstreeks overgenomen van de Newton-Raphsonmethode.
-De andere voorwaarde zorgt ervoor dat de methode niet stopt in een lokaal minimum.\\
+De andere voorwaarde zorgt ervoor dat de methode niet stopt in een lokaal minimum.
 
 Omdat steeds $x=1$ als startwaarde werd gebruikt zorgde dit ervoor dat voor $f_2(x)$ de methode in een lokaal minimum bleef vastzitten.
 Dit kan je ook zien op Figure 4, waarbij de fout van de methode ten opzichte van het werkelijk vast punt niet verbetert
 doorheen de iteraties en steeds oscilleert rond de functiewaarde in $x=0$. Wanneer $x=4$ als startwaarde werd gekozen, convergeerde de functie wel naar een nulpunt.
 Immers, in Figure 3 kan men zien dat de afgeleide van de functie in $x=4$ inderdaad een zeer goede aanwijzing zal geven voor
 het nulpunt tussen $x=4$ en $x=6$.
-\\ \\
+ 
 We voerde de methode ook uit op de andere functies. We merkten op dat de andere functies
 wel convergeerden naar een nulpunt. Voor deze functies is de orde 2 (per keuze van de vastpuntsmethode Newton-Rhapson).
 De bijhorende convergentiefactoren staan genoteerd in Figure 5.
 De convergentie factor is $\sup_{k \in \NN} \{ \frac{\varepsilon_{k+1}}{\varepsilon_{k}}  \} $, hetgeen voor een eindig aantal
 iteratiestappen gelijk is aan $\max_{k \in \{ 1, ..., N-1\} } \{ \frac{\varepsilon_{k+1}}{\varepsilon_{k}}  \} $.
 % TODO: "Leg uit hoe je resultaten in overeenstemming zijn met de theorie."
-\\ \\
+ 
 Merk op (in Figure 3) dat $f_4(x)$ een meervoudig nulpunt heeft, noem dit $x_0$.
 De graad van het nulpunt blijkt drie te zijn (zie functievoorschrift van $f_4$).
 Dit heeft tot gevolg dat $\lim_{x \to x_0}  f_4^{'} (x) = 0$. Aangezien ook $\lim_{x \to x_0} f_4(x) $ = 0, 
@@ -176,7 +176,7 @@ Met deze expliciete iteratieformule verkrijgen we wel degelijk convergentie, met
 \end{minipage}
 \begin{minipage}{0.45\textwidth}
     \centering
-    \includegraphics[width=\linewidth]{fout_op_f4_expliciet.png}
+    \includegraphics[width=\linewidth]{f4_fout.png}
     \caption{Convergentiegedrag van $f_4$ na het opstellen van een expliciete formule.}
 \end{minipage}
 \end{figure}
@@ -255,11 +255,11 @@ Om het effect van de multipliciteit van een nulpunt op het Newtonbassin te zien
 stellen we de functie $(z-1)^m (z+1)$ op.
 Hierin stelt de variabele $m$ de multipliciteit van het nulpunt $z=1$ voor.
 Zo illustreren we de Newtonbassins voor verschillende multipliciteiten
-in het gebied van zowel x als y gaande van -2 tot 2 in Figure 9. \\
+in het gebied van zowel x als y gaande van -2 tot 2 in Figure 9.
 
 In de figuren is te zien hoe de bassins een fractaalstructuur vormen.
 Deze fractaal wordt ook steeds smaller en neemt zo een kleiner percentage van het bekeken gebied in beslag.
-Dit betekent dat er meer startwaarden van de Newton-Raphsonmethode naar het nulpunt convergeren met de hogere multipliciteit. \\
+Dit betekent dat er meer startwaarden van de Newton-Raphsonmethode naar het nulpunt convergeren met de hogere multipliciteit.
 
 Een ander gevolg van hogere multipliciteit van een nulpunt is dat de Newton-Raphsonmethode trager convergeert.
 Een hogere graad van het nulpunt van de veelterm zorgt er namelijk voor dat de methode lineair convergeert in plaats van kwadratisch.
@@ -268,27 +268,29 @@ Figure 10 geeft het aantal iteratiestappen weer die nodig zijn om tot de nulpunt
 Hierop is duidelijk te zien dat de multipliciteit een effect heeft op de convergentiesnelheid.
 
 \begin{figure}[h!]
-\begin{minipage}{0.74\textwidth}
-    \begin{minipage}{0.30\textwidth}
+\begin{minipage}{0.45\textwidth}
+    \centering
+    \begin{minipage}{0.45\textwidth}
         \centering
         \includegraphics[width=\linewidth]{bassin2.png}
     \end{minipage}
-    \begin{minipage}{0.30\textwidth}
+    \begin{minipage}{0.45\textwidth}
         \centering
         \includegraphics[width=\linewidth]{bassin4.png}
     \end{minipage}
-    \begin{minipage}{0.30\textwidth}
-        \centering
-        \includegraphics[width=\linewidth]{bassin10.png}
-    \end{minipage}
-    \caption{newtonbassin van $(z-1)^m (z+1)$ voor verscheidene $m$}
 \end{minipage}
-\begin{minipage}{0.24\textwidth}
-    \vspace{30px}
+\begin{minipage}{0.45\textwidth}
     \centering
-    \includegraphics[width=\linewidth]{bassin4_iter.png}
-    \caption{aantal iteraties tot nulpunt}
+    \begin{minipage}{0.45\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{bassin2_iter.png}
+    \end{minipage}
+    \begin{minipage}{0.45\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{bassin4_iter.png}
+    \end{minipage}
 \end{minipage}
+\caption{}
 \end{figure}
 
 \paragraph*{Opdracht 5} % halve pagina 
