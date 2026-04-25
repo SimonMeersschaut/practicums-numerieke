@@ -127,8 +127,8 @@ het nulpunt tussen $x=4$ en $x=6$.
 We voerde de methode ook uit op de andere functies. We merkten op dat de andere functies
 wel convergeerden naar een nulpunt. Voor deze functies is de orde 2 (per keuze van de vastpuntsmethode Newton-Rhapson).
 De bijhorende convergentiefactoren staan genoteerd in Figure 5.
-De convergentie factor is $\sup_{k \in \NN} \{ \frac{\varepsilon_{k+1}}{\varepsilon_{k}}  \} $, hetgeen voor een eindig aantal
-iteratiestappen gelijk is aan $\max_{k \in \{ 1, ..., N-1\} } \{ \frac{\varepsilon_{k+1}}{\varepsilon_{k}}  \} $.
+De convergentie factor is $\sup_{k \in \NN} \{ \frac{\varepsilon_{k+1}}{\varepsilon_{k}}  \} $, hetgeen door een eindig aantal
+iteratiestappen benaderd wordt met $\max_{k \in \{ 1, ..., N-1\} } \{ \frac{\varepsilon_{k+1}}{\varepsilon_{k}}  \} $.
 % TODO: "Leg uit hoe je resultaten in overeenstemming zijn met de theorie."
  
 Merk op (in Figure 3) dat $f_4(x)$ een meervoudig nulpunt heeft, noem dit $x_0$.
@@ -138,15 +138,15 @@ deelt de iteratiemethode een zeer klein getal door een ander zeer klein getal, h
 geeft. Om dit op te lossen berekenen we $x_{k+1} = x_k - \frac{f_4(x_k)}{f_4^{'}(x_k)}$ expliciet.
 
 dit is zeer simpel te doen door middel van de productformule en de afgeleide van $e^x$ en veeltermfuncties.
-dan volgt:
+Er geldt:
 
 \begin{align*}
     f_4(x) &= (8x^3 - 12x^2 + 6x - 1)e^x \\
     f_4'(x) &= (8x^3 - 12x^2 + 6x - 1)e^x + (24x^2 - 24x + 6)e^x \\
               &= (8x^3 + 12x^2 - 18x + 5)e^x
-\end{align*}
+\end{align*}.
 
-vul hiermee $x_{k+1} = x_k - \frac{f_4(x_k)}{f_4^{'}(x_k)}$. Dit geeft:
+Invullen in $x_{k+1} = x_k - \frac{f_4(x_k)}{f_4^{'}(x_k)}$ geeft:
 
 \begin{align*}
     x_{k+1} &= x_k - \frac{(8x_k^3 - 12x_k^2 + 6x_k - 1)e^x}{(8x_k^3 + 12x_k^2 - 18x_k + 5)e^x} \\
@@ -190,7 +190,7 @@ Het script gaat alle punten in een rooster af waarbij de convergentiemethode
 telkens wordt toegepast met het coördinaat als startpunt. Indien er convergentie optreedt, slaan we op naar welk nulpunt (we slaan de index van het nulpunt op).
 Dit levert een matrix A op waarbij $A_{(x, y)}$ overeenkomt met de index van het nulpunt, startende vanuit positie $z= x + iy$.
 We kozen hierbij voor een rooster van -2 tot 2 voor beiden assen met telkens
-1.000 onderverdelingen per as voor een totaal van 1.000.000 startposities.
+$10^3$ onderverdelingen per as voor een totaal van $10^6$ startposities.
 De resultaten hiervan zijn weergegeven in Figure 7 en Figure 8.
 
 Men kan zien dat in de nabije omgeving rond een nulpunt, een uniforme kleur aanwezig is.
@@ -314,7 +314,7 @@ te sterk doorwegen, zodat de accuraatheid net kleiner wordt.
 
 We constateren op basis van de figuur dat het praktisch optimum
 iets groter blijkt
-te zijn dan het theoretisch minimum $10^{-8}$.
+te zijn dan het theoretisch minimum $h_{opt} = 10^{-8}$.
 
 Vervolgens hermaakten we het fractaal van opdracht 3,
 maar ditmaal met de nieuwe eindige differentie.
