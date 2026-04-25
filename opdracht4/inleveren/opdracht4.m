@@ -30,6 +30,12 @@ colorbar
 title(sprintf('Newton fractal for m = %d', m));
 xlabel('Re(z)');
 ylabel('Im(z)');
+end
+
+for m = [2, 4, 10]
+
+f = @(z) (z-1).^m .* (z+1);
+df = @(z) ((z+1).*m.*(z-1).^(m-1)) + (z-1).^m;
 
 N = 800;
 x = linspace(-2,2,N);
@@ -63,4 +69,3 @@ title(sprintf('Convergentiesnelheid (m = %d)',m));
 xlabel('Re(z)');
 ylabel('Im(z)');
 end
-
