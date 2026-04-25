@@ -1,7 +1,7 @@
 % f = @(x)(x .^ 3 - x .^ 2  + x - 1);
 % derf = @(x)(newton_differentie(f, x));
 
-macht = 5;
+macht = 3;
 
 f = @(z)(z .^ macht - 1);
 derf = @(z)(macht .* z .^ (macht-1));
@@ -45,4 +45,3 @@ for ind=1:length(zeros)
     'LineWidth', 1.5);                  % Thickness of the border
     % text(px + 1, py + 0.3, mytext, 'FontSize', 12, "Color", "black");
 end
-
