@@ -78,7 +78,6 @@ of $x^* = 0$.
 
 We berekenen de convergentiefactor in het punt $x^* = 0$.
 Definieer daartoe de rij $\left(x_k\right)_k$ als $\left(x_{k+1}\right) = a \cdot x_k$.
-
 Dan is de convergentiefactor 
 \begin{math}
     \rho
@@ -97,9 +96,9 @@ Dan is de convergentiefactor
     = a,
 \end{math}
 
-zodat inderdaad de convergentatiefactor van het vast punt a is.  
-We beginnen de vastpuntiteratie met $a=1/3$ in $x_0=1$. Zoals ook in onderstaande figuur weergegeven.
-De fout $\epsilon$ komt overeen met de x-waarde na een opvolgende iteratiestap.
+zodat inderdaad de convergentatiefactor van het vast punt a is. \\ \\
+We beginnen de vastpuntiteratie met $a=1/3$ in $x_0=1$ zoals ook in onderstaande figuur weergegeven.
+De fout $\epsilon$ komt overeen met de x-waarde na een iteratiestap (omdat het vast punt $x^*=0$).
 
 \begin{figure}[h!]
 \begin{minipage}{0.45\textwidth}
@@ -115,11 +114,11 @@ De fout $\epsilon$ komt overeen met de x-waarde na een opvolgende iteratiestap.
 
 \paragraph*{Opdracht 2} % Maximaal 1.5 pagina (dit is inclusief figuren)
 
-Als stopcriterium kozen wij $(|x_k - x_{k-1}| < tol)\: \&\& \:(|f(x_k)| < tol)$.
+Als stopcriterium kozen wij $(|x_k - x_{k-1}| < tol)\: \land \:(|f(x_k)| < tol)$.
 Het eerste deel hiervan is rechtstreeks overgenomen van de Newton-Raphsonmethode.
 De andere voorwaarde zorgt ervoor dat de methode niet stopt in een lokaal minimum.
 
-Omdat steeds $x=1$ als startwaarde werd gebruikt zorgde dit ervoor dat voor $f_2(x)$ de methode in een lokaal minimum bleef vastzitten.
+Omdat steeds $x=1$ als startwaarde werd gebruikt, zorgde dit ervoor dat voor $f_2$ de methode in een lokaal minimum bleef vastzitten.
 Dit kan je ook zien op Figure 4, waarbij de fout van de methode ten opzichte van het werkelijk vast punt niet verbetert
 doorheen de iteraties en steeds oscilleert rond de functiewaarde in $x=0$. Wanneer $x=4$ als startwaarde werd gekozen, convergeerde de functie wel naar een nulpunt.
 Immers, in Figure 3 kan men zien dat de afgeleide van de functie in $x=4$ inderdaad een zeer goede aanwijzing zal geven voor
@@ -128,8 +127,8 @@ het nulpunt tussen $x=4$ en $x=6$.
 We voerde de methode ook uit op de andere functies. We merkten op dat de andere functies
 wel convergeerden naar een nulpunt. Voor deze functies is de orde 2 (per keuze van de vastpuntsmethode Newton-Rhapson).
 De bijhorende convergentiefactoren staan genoteerd in Figure 5.
-De convergentie factor is $\sup_{k \in \NN} \{ \frac{\varepsilon_{k+1}}{\varepsilon_{k}}  \} $, hetgeen voor een eindig aantal
-iteratiestappen gelijk is aan $\max_{k \in \{ 1, ..., N-1\} } \{ \frac{\varepsilon_{k+1}}{\varepsilon_{k}}  \} $.
+De convergentie factor is $\sup_{k \in \NN} \{ \frac{\varepsilon_{k+1}}{\varepsilon_{k}}  \} $, hetgeen door een eindig aantal
+iteratiestappen benaderd wordt met $\max_{k \in \{ 1, ..., N-1\} } \{ \frac{\varepsilon_{k+1}}{\varepsilon_{k}}  \} $.
 % TODO: "Leg uit hoe je resultaten in overeenstemming zijn met de theorie."
  
 Merk op (in Figure 3) dat $f_4(x)$ een meervoudig nulpunt heeft, noem dit $x_0$.
@@ -139,15 +138,15 @@ deelt de iteratiemethode een zeer klein getal door een ander zeer klein getal, h
 geeft. Om dit op te lossen berekenen we $x_{k+1} = x_k - \frac{f_4(x_k)}{f_4^{'}(x_k)}$ expliciet.
 
 dit is zeer simpel te doen door middel van de productformule en de afgeleide van $e^x$ en veeltermfuncties.
-dan volgt:
+Er geldt:
 
 \begin{align*}
     f_4(x) &= (8x^3 - 12x^2 + 6x - 1)e^x \\
     f_4'(x) &= (8x^3 - 12x^2 + 6x - 1)e^x + (24x^2 - 24x + 6)e^x \\
               &= (8x^3 + 12x^2 - 18x + 5)e^x
-\end{align*}
+\end{align*}.
 
-vul hiermee $x_{k+1} = x_k - \frac{f_4(x_k)}{f_4^{'}(x_k)}$. Dit geeft:
+Invullen in $x_{k+1} = x_k - \frac{f_4(x_k)}{f_4^{'}(x_k)}$ geeft:
 
 \begin{align*}
     x_{k+1} &= x_k - \frac{(8x_k^3 - 12x_k^2 + 6x_k - 1)e^x}{(8x_k^3 + 12x_k^2 - 18x_k + 5)e^x} \\
@@ -191,7 +190,7 @@ Het script gaat alle punten in een rooster af waarbij de convergentiemethode
 telkens wordt toegepast met het coördinaat als startpunt. Indien er convergentie optreedt, slaan we op naar welk nulpunt (we slaan de index van het nulpunt op).
 Dit levert een matrix A op waarbij $A_{(x, y)}$ overeenkomt met de index van het nulpunt, startende vanuit positie $z= x + iy$.
 We kozen hierbij voor een rooster van -2 tot 2 voor beiden assen met telkens
-1.000 onderverdelingen per as voor een totaal van 1.000.000 startposities.
+$10^3$ onderverdelingen per as voor een totaal van $10^6$ startposities.
 De resultaten hiervan zijn weergegeven in Figure 7 en Figure 8.
 
 Men kan zien dat in de nabije omgeving rond een nulpunt, een uniforme kleur aanwezig is.
@@ -254,14 +253,16 @@ punten uiteraard constant.
 Om het effect van de multipliciteit van een nulpunt op het Newtonbassin te zien,
 stellen we de functie $(z-1)^m (z+1)$ op.
 Hierin stelt de variabele $m$ de multipliciteit van het nulpunt $z=1$ voor.
-Zo illustreren we de Newtonbassins voor verschillende multipliciteiten
-in het gebied van zowel x als y gaande van -2 tot 2 in Figure 9.
+Figuur 9 toont de Newtonbassins voor verschillende multipliciteiten,
+weergegeven in het domein waarbij zowel x als y variëren van -2 tot 2.
+Het bassin visualizeren we door de punten $z \in \mathbb{C} $ waarvoor
+de iteratie convergeert naar het nulpunt in maximaal 60 iteraties blauw te kleuren.
 
 In de figuren is te zien hoe de bassins een fractaalstructuur vormen.
 Deze fractaal wordt ook steeds smaller en neemt zo een kleiner percentage van het bekeken gebied in beslag.
 Dit betekent dat er meer startwaarden van de Newton-Raphsonmethode naar het nulpunt convergeren met de hogere multipliciteit.
 Deze fractaal wordt ook steeds smaller in functie van m en neemt zo een kleiner percentage van het bekeken gebied in beslag.
-Dit betekent dat er meer startwaarden van de Newton-Raphsonmethode naar het nulpunt convergeren met de hogere multipliciteit. \\
+Dit betekent dat er meer startwaarden van de Newton-Raphsonmethode naar het nulpunt convergeren met de hogere multipliciteit.
 
 Een ander gevolg van hogere multipliciteit van een nulpunt is dat de Newton-Raphsonmethode trager convergeert.
 Een hogere graad van het nulpunt van de veelterm zorgt er namelijk voor dat de methode lineair convergeert in plaats van kwadratisch.
@@ -313,7 +314,7 @@ te sterk doorwegen, zodat de accuraatheid net kleiner wordt.
 
 We constateren op basis van de figuur dat het praktisch optimum
 iets groter blijkt
-te zijn dan het theoretisch minimum $10^{-8}$.
+te zijn dan het theoretisch minimum $h_{opt} = 10^{-8}$.
 
 Vervolgens hermaakten we het fractaal van opdracht 3,
 maar ditmaal met de nieuwe eindige differentie.
