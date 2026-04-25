@@ -34,7 +34,7 @@ xlabel('Re(z)');
 ylabel('Im(z)');
 end
 
-m = 4;
+for m = [2, 4, 10]
 
 f = @(z) (z-1).^m .* (z+1);
 df = @(z) ((z+1).*m.*(z-1).^(m-1)) + (z-1).^m;
@@ -70,3 +70,4 @@ cb.Label.String = 'Aantal Newton-iteraties';
 title(sprintf('Convergentiesnelheid (m = %d)',m));
 xlabel('Re(z)');
 ylabel('Im(z)');
+end
