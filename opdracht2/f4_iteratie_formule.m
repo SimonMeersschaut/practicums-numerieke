@@ -11,17 +11,7 @@ x = zeros(1, 100);
 for i=1:100
    xk = f4_iter(xk);
    x(i) = xk;
-   % epsilons(i) = abs(1/2 - x);
 end
 
-x
-
-clf()
+figure;
 plot(x);
-% epsilons = zeros(1, 100);
-% 
-% hold all
-% clf()
-% 
-% 
-% plot(epsilons);
