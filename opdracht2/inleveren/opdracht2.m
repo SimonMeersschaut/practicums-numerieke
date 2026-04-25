@@ -16,7 +16,7 @@ func_names = {
     'cos(abs(x) + pi/4) + 0.8;';
     'cosh(x - exp(1)) - 1';
     '(8.*(x^3) - 12*(x^2) + 6*x - 1)*exp(x)';
-}
+};
 
 for i=1:4
     derf = @(x) newton_differentie(funcs{i}, x);
