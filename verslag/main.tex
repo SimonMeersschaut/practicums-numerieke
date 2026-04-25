@@ -250,8 +250,47 @@ punten uiteraard constant.
 
 \newpage
 
-\paragraph*{opdracht 4} % halve pagina
+\paragraph*{Opdracht 4} % halve pagina
 
+Om het effect van de multipliciteit van een nulpunt op het Newtonbassin te zien
+stellen we de functie $(z-1)^m (z+1)$ op.
+Hierin stelt de variabele $m$ de multipliciteit van het nulpunt $z=1$ voor.
+Zo illustreren we de Newtonbassins voor verschillende multipliciteiten
+in het gebied van zowel x als y gaande van -2 tot 2 in Figure 9. \\
+
+In de figuren is te zien hoe de bassins een fractaalstructuur vormen.
+Deze fractaal wordt ook steeds smaller en neemt zo een kleiner percentage van het bekeken gebied in beslag.
+Dit betekent dat er meer startwaarden van de Newton-Raphsonmethode naar het nulpunt convergeren met de hogere multipliciteit. \\
+
+Een ander gevolg van hogere multipliciteit van een nulpunt is dat de Newton-Raphsonmethode trager convergeert.
+Een hogere graad van het nulpunt van de veelterm zorgt er namelijk voor dat de methode lineair convergeert in plaats van kwadratisch.
+Dit kan voor sommige startwaarde een significant effect hebben op de convergentiesnelheid.
+Figure 10 geeft het aantal iteratiestappen weer die nodig zijn om tot de nulpunten te convergeren.
+Hierop is duidelijk te zien dat de multipliciteit een effect heeft op de convergentiesnelheid.
+
+\begin{figure}[h!]
+\begin{minipage}{0.74\textwidth}
+    \begin{minipage}{0.30\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{bassin2.png}
+    \end{minipage}
+    \begin{minipage}{0.30\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{bassin4.png}
+    \end{minipage}
+    \begin{minipage}{0.30\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{bassin10.png}
+    \end{minipage}
+    \caption{newtonbassin van $(z-1)^m (z+1)$ voor verscheidene $m$}
+\end{minipage}
+\begin{minipage}{0.24\textwidth}
+    \vspace{30px}
+    \centering
+    \includegraphics[width=\linewidth]{bassin4_iter.png}
+    \caption{aantal iteraties tot nulpunt}
+\end{minipage}
+\end{figure}
 
 \paragraph*{Opdracht 5} % halve pagina 
 
