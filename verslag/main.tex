@@ -292,7 +292,7 @@ Hierop is duidelijk te zien dat de multipliciteit een effect heeft op de converg
         \includegraphics[width=\linewidth]{bassin4_iter.png}
     \end{minipage}
 \end{minipage}
-\caption{}
+\caption{Newtonbassins voor $m=2$ en $m=4$ met respectievelijk iteratiestappen tot het nulpunt}
 \end{figure}
 
 \paragraph*{Opdracht 5} % halve pagina 
@@ -301,7 +301,7 @@ Eerst berekenden we de error $\epsilon$
 tussen de eindige differentie 
 $\bar{f'(x)} = \frac{f(x_0 + h) - f(x_0 - h)}{2h} $
 en de exacte afgeleide.
-Dat hebben we geplot op logaritmische schaal in Figure 9. % TODO check
+Dat hebben we geplot op logaritmische schaal in Figure 10. % TODO check
 
 Men kan twee fenomenen zien op de grafiek. Enerzijds, wanneer we de
 afstand $h$ te groot maken, dan zijn we de grafiek te
@@ -325,12 +325,13 @@ de grafiek op basis van de analytische afgeleide
 en die op basis van de numeriek benaderde afgeleide.
 
 \begin{figure}[h!]
-\begin{minipage}{0.45\textwidth}
+\centering
+\begin{minipage}[t]{0.35\textwidth}
     \centering
     \includegraphics[width=\linewidth]{error_plot.png}
-    \caption{Grafiek van de error op de benadering van de afgeleide. In rood $10^{-8}$, het theoretisch optimum.}
+    \caption{Error op de benadering van de afgeleide. In rood $10^{-8}$, het theoretisch optimum.}
 \end{minipage}
-\begin{minipage}{0.45\textwidth}
+\begin{minipage}[t]{0.50\textwidth}
     \centering
     \includegraphics[width=\linewidth]{newtfrac_findiff.png}
     \caption{Grafiek van de matrix A met eindige differentie voor $z^3 - 1$.}
