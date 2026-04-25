@@ -1,7 +1,5 @@
-for m = [2, 4, 10]
-
-% TODO: for lus over m=1:10
-% en de bijhorende breedte opslaan en plotten
+for m = [2, 4]
+    
 f = @(z) (z-1).^m .* (z+1);
 df = @(z) ((z+1).*m.*(z-1).^(m-1)) + (z-1).^m;
 
